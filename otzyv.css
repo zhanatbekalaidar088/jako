@@ -1,0 +1,42 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(244, 124, 19);
+    padding: 15px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-bar h2 {
+    color: black;
+    margin: 0;
+    font-size: 26px;
+    text-shadow: 0 0 15px lightblue;
+}
+
+.top-bar-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.top-bar-button {
+    background-color: orange;
+    color: #0d0d0d;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.top-bar-button:hover {
+    background-color: #ff006a;
+    color: #fff;
+    transform: scale(1.05);
+}
+body{
+     cursor: url('cursor_icon_215900.png'), auto;
+}

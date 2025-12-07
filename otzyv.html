@@ -1,0 +1,66 @@
+<html>
+<head>
+    <link rel="stylesheet" href="zh2css.css">
+    <title>OZ PIKIRIN</title>
+</head>
+<body>
+    <div class="top-bar">
+        <h2>Basketball🏀</h2>
+        <div class="top-bar-buttons">
+            <a class="top-bar-button" href="index.html">Basty bet</a>
+        </div>
+    </div>
+    <br><br><br><br><br><br> <br><br><br>
+
+    <div class="wrapper">
+        <h1 align="center">Өз пікіріңді қалдыр 📝</h1>
+
+        <form id="reviewForm">
+            <label for="name">Атың:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="category">Пікір түрі:</label><br>
+            <select id="category" name="category" required>
+                <option value="">Таңдаңыз...</option>
+                <option value="Ұнады">Ұнады 😊</option>
+                <option value="Жақсы">Жақсы 👍</option>
+                <option value="Орташа">Орташа 😐</option>
+                <option value="Онша емес">Онша емес 👎</option>
+            </select><br><br>
+
+            <label for="review">Пікірің:</label><br>
+            <textarea id="review" name="review" rows="5" cols="40" required></textarea><br><br>
+
+            <button type="submit">Жіберу</button>
+        </form>
+
+        <div id="reviewsList"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById("reviewForm");
+        const reviewsList = document.getElementById("reviewsList");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const category = document.getElementById("category").value;
+            const review = document.getElementById("review").value;
+
+            const reviewDiv = document.createElement("div");
+            reviewDiv.classList.add("review-item");
+            reviewDiv.innerHTML = `
+                <strong>${name}</strong> — <em>${category}</em>
+                <p>${review}</p>
+            `;
+
+            reviewsList.appendChild(reviewDiv);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
+
+
